@@ -1,0 +1,95 @@
+
+
+@social @facebook
+Scenario: Verify the “facebook” sharing functionality
+  Given I am navigating there with cleared cache and cookies
+And that I see a “facebook” icon under social share train
+  When I click on the “facebook” icon 
+Then the log in flyout will appear
+  Then the login window appears
+  When I enter the user id and password
+  And click on the Log-in button in the Facebook sign-in form
+  Then I will be logged in to Facebook
+Then my Facebook avatar will appear in the flyout
+Then I see valid story URL displayed in the flyout
+ When I enter the comment in the flyout
+ And click on share link 
+Then user should be able to view the comment and story URL posted in facebook timeline 
+Then see the faecbook counter getting incremented
+When I click on close button in the flyout 
+Then flyout should get closed
+
+@social @twitter
+Scenario: Verify the “twitter” sharing functionality
+  Given I am navigating there with cleared cache and cookies
+And that I see a “twitter” icon under social share train
+  When I click on the “twitter” icon 
+Then the twitter flyout will appear with login fields 
+Then I see story URL displayed in the flyout
+
+  When I enter the user id and password
+  And click on the sign in and tweet button 
+Then I see “Your Tweet has been posted” message
+  Then I see “View it on twitter” link 
+When I click on “View it on twitter” link
+Then user should be able to view the comment and story URL posted in twitter site 
+Then see the twitter counter getting incremented under social share train 
+
+
+@social @google plus 
+Scenario: Verify the “google plus” sharing functionality
+Given I am navigating there with cleared cache and cookies
+And that I see a “google plus” icon under social share train
+  When I click on the “google plus” icon 
+Then the google plus flyout will appear with login fields 
+  When I enter the user id and password
+  And click on the Log-in button 
+  Then I will be logged in to googleplus
+Then I see valid story URL displayed in the flyout
+ When I enter the comment and add email ID in the flyout
+ And click on share link 
+Then user should be able to share the comment and story URL  
+When I click on close button in the flyout 
+Then flyout should get closed
+
+@social @linkedin 
+Scenario: Verify the “linkedin” sharing functionality
+  Given I am navigating there with cleared cache and cookies
+And that I see a “linkedin” icon under social share train
+  When I click on the “linkedin” icon 
+Then the log in flyout will appear
+  Then the login window appears
+  When I enter the user id and password
+  And click on the Log-in button in the Linkedin sign-in form
+  Then I will be logged in to Linkedin
+Then I see valid story URL displayed in the flyout
+ When I enter the comment in the flyout
+ And click on share 
+Then user should be able to view the comment and story URL posted in linkedin site
+Then see the linkedin counter getting incremented under social share train 
+When I click on close button in the flyout 
+Then flyout should get closed
+
+@social @email 
+Scenario: Verify the “email” functionality
+And that I see a “email” icon under social share train
+When I click on email icon 
+Then I see email flyout with story URL and story title as email subject 
+When I click on close button in the flyout 
+Then flyout should get closed
+
+@social @pinterest
+Scenario: Verify the “pinterest” functionality
+And that I see a “pinterest” icon under social share train
+When I click on pinterest icon 
+Then I see pinterest flyout with story image and story title 
+When I select the board and click on pinit  
+Then I see success message the image was pinned
+
+@social @print
+Scenario: Verify the “print” functionality
+And that I see a “print” icon under social share train
+When I click on print icon 
+Then I see print preview  
+When I click on print button 
+Then I see document is printed
